@@ -1,27 +1,42 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #07070a;
-  --color-panel: #101015;
-  --color-accent: #34d399;
-  --color-accent2: #22d3ee;
+  --color-paper: #efece3;
+  --color-card: #f6f4ee;
+  --color-ink: #16150f;
+  --color-faint: #6b685d;
+  --color-rule: #16150f;
+  --color-accent: #b5431d;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, "Inter", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace;
 }
 
 html {
-  scroll-behavior: smooth;
-  background-color: var(--color-ink);
+  background-color: var(--color-paper);
 }
 
 body {
-  background-color: var(--color-ink);
-  color: #e4e4e7;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Subtle grid backdrop for the hero */
-.bg-grid {
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
+/* tighten big display type the Swiss way */
+.display {
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper);
 }
