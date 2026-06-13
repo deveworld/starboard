@@ -1,3 +1,6 @@
+import Viewer from "./Viewer";
+import Gallery from "./Gallery";
+
 const REPO = "https://github.com/deveworld/starboard";
 const RAW = "https://github.com/deveworld/starboard/raw/main";
 
@@ -40,12 +43,6 @@ const files: { name: string; sub: string; ext: string; href: string }[] = [
   { name: "Enclosure, bottom", sub: "bottom shell", ext: "STEP", href: `${RAW}/production/Bottom.STEP` },
   { name: "KiCad project", sub: "schematic + board", ext: "DIR", href: `${REPO}/tree/main/PCB` },
   { name: "Full source", sub: "everything", ext: "GIT", href: REPO },
-];
-
-const figures: { src: string; n: string; cap: string }[] = [
-  { src: "/starboard.svg", n: "02", cap: "Schematic" },
-  { src: "/pcb-front.svg", n: "03", cap: "Board — front copper" },
-  { src: "/pcb-back.svg", n: "04", cap: "Board — back copper" },
 ];
 
 function SectionHead({ n, title }: { n: string; title: string }) {
@@ -101,17 +98,12 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Figure 1 — render */}
+      {/* Figure 1 — interactive 3D model */}
       <figure className="border-y border-ink/20 bg-card">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/assembled-model-render.png"
-          alt="Starboard assembled enclosure, 3D render"
-          className="mx-auto w-full max-w-3xl"
-        />
+        <Viewer />
         <figcaption className="label flex items-center justify-between border-t border-ink/20 px-6 py-2.5 text-faint md:px-10">
           <span>Fig. 01</span>
-          <span>Assembled enclosure</span>
+          <span>Assembled enclosure — interactive</span>
         </figcaption>
       </figure>
 
@@ -194,18 +186,8 @@ export default function Home() {
       {/* 04 — Design files */}
       <section id="design" className="border-t border-ink/20 px-6 py-14 md:px-10">
         <SectionHead n="04" title="Design files" />
-        <div className="grid gap-6 sm:grid-cols-3">
-          {figures.map((g) => (
-            <figure key={g.cap} className="border border-ink/20 bg-white">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={g.src} alt={g.cap} className="aspect-square w-full object-contain p-5" />
-              <figcaption className="label flex items-center justify-between border-t border-ink/20 px-3 py-2 text-faint">
-                <span>Fig. {g.n}</span>
-                <span className="normal-case tracking-normal">{g.cap}</span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+        <p className="label mb-6 text-faint">Click any figure to enlarge</p>
+        <Gallery />
       </section>
 
       {/* 05 — Bill of materials */}
