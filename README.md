@@ -2,24 +2,15 @@
 
 Starboard is a compact Hackpad macropad using only kit parts: six MX-style switches, one EC11 encoder, one 0.91 inch OLED, six SK6812 MINI-E LEDs, and a Seeed XIAO RP2040.
 
+![Starboard assembled render](assets/assembled-model-render.png)
+
+The current case model is `CAD/assembled-model.STEP`, which includes the case and assembled components.
+
 ## Renders / Screenshots
 
-### Schematic
-
-![Schematic](assets/starboard.svg)
-
-### PCB Layout
-
-![PCB front](assets/pcb-front.svg)
-
-![PCB back](assets/pcb-back.svg)
-
-### Case
-
-![Case render](assets/assembled-model-render.png)
-
-The current case model is `CAD/assembled-model.STEP`, which includes the case
-and assembled components.
+| Schematic | PCB front | PCB back |
+| :---: | :---: | :---: |
+| <img src="assets/starboard.svg" width="250" alt="Schematic"> | <img src="assets/pcb-front.svg" width="250" alt="PCB front"> | <img src="assets/pcb-back.svg" width="250" alt="PCB back"> |
 
 ## Bill of Materials
 
