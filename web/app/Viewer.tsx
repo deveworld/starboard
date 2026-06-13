@@ -53,8 +53,6 @@ export default function Viewer() {
     controls.enablePan = false;
     controls.autoRotate = true;
     controls.autoRotateSpeed = 1.1;
-    controls.minDistance = 30;
-    controls.maxDistance = 400;
 
     let raf = 0;
     let disposed = false;
@@ -82,6 +80,9 @@ export default function Viewer() {
         camera.near = maxDim / 100;
         camera.far = maxDim * 100;
         camera.updateProjectionMatrix();
+        // distance limits relative to model size (GLB is in metres)
+        controls.minDistance = maxDim * 0.6;
+        controls.maxDistance = maxDim * 6;
         controls.target.set(0, 0, 0);
         controls.update();
         setLoaded(true);
