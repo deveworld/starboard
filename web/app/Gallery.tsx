@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { asset } from "./asset";
 
 const figures: { src: string; n: string; cap: string }[] = [
   { src: "/starboard.svg", n: "02", cap: "Schematic" },
@@ -39,7 +40,7 @@ export default function Gallery() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={g.src}
+                src={asset(g.src)}
                 alt={g.cap}
                 className="aspect-square w-full object-contain p-5 transition-opacity group-hover:opacity-80"
               />
@@ -75,7 +76,7 @@ export default function Gallery() {
           <div className="flex flex-1 items-center justify-center px-4 pb-8" onClick={() => setOpen(null)}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={figures[open].src}
+              src={asset(figures[open].src)}
               alt={figures[open].cap}
               className="max-h-full max-w-full bg-white p-4"
               onClick={(e) => e.stopPropagation()}

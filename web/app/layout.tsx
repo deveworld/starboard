@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { asset } from "./asset";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://deveworld.github.io"),
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     title: "Starboard — Compact RP2040 Macropad",
     description:
       "6 MX keys + EC11 encoder, OLED, RGB. Seeed XIAO RP2040 + QMK. Open-source KiCad PCB and 3D-printed case.",
-    images: ["/assembled-model-render.png"],
+    images: [asset("/assembled-model-render.png")],
   },
 };
 

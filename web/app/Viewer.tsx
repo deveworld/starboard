@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { asset } from "./asset";
 
 export default function Viewer() {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -59,7 +60,7 @@ export default function Viewer() {
 
     const loader = new GLTFLoader();
     loader.load(
-      "/model/starboard.glb",
+      asset("/model/starboard.glb"),
       (gltf) => {
         if (disposed) return;
         const obj = gltf.scene;
@@ -125,7 +126,7 @@ export default function Viewer() {
       {/* Poster / fallback — visible until the model renders (or stays if WebGL fails) */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/assembled-model-render.png"
+        src={asset("/assembled-model-render.png")}
         alt="Starboard assembled enclosure"
         className={`pointer-events-none absolute inset-0 m-auto max-h-full w-auto max-w-full object-contain transition-opacity duration-700 ${
           loaded && !failed ? "opacity-0" : "opacity-100"
