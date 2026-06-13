@@ -1,0 +1,11 @@
+# KiCad local edit history (not part of submission)
+PCB/.history/
+
+# KiCad backups / autosave / caches
+*-backups/
+*.bak
+_autosave-*
+fp-info-cache
+
+# Temp / build artifacts
+*.tmp

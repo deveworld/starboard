@@ -1,0 +1,25 @@
+# Copyright 2026 Starboard
+# SPDX-License-Identifier: GPL-2.0-or-later
+
+MCU = RP2040
+BOARD = GENERIC_RP_RP2040
+BOOTLOADER = rp2040
+
+CUSTOM_MATRIX = lite
+SRC += matrix.c
+
+BOOTMAGIC_ENABLE = yes
+EXTRAKEY_ENABLE = yes
+MOUSEKEY_ENABLE = yes
+NKRO_ENABLE = yes
+
+ENCODER_ENABLE = yes
+
+OLED_ENABLE = yes
+OLED_DRIVER = ssd1306
+OLED_TRANSPORT = i2c
+
+RGBLIGHT_ENABLE = yes
+WS2812_DRIVER = vendor
+
+LTO_ENABLE = yes

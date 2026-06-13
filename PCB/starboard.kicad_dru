@@ -1,0 +1,6 @@
+(version 1)
+(rule "Allow SK6812MINI-E edge clearance"
+
+  (severity ignore)
+  (condition "((A.memberOfFootprint('*:SK6812MINI-E*') || B.memberOfFootprint('*:SK6812MINI-E*')) && (A.Layer == 'Edge.Cuts' || B.Layer == 'Edge.Cuts'))")
+  (constraint edge_clearance (min -0.01mm)))
