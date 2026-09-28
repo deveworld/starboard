@@ -17,8 +17,8 @@
     "encoder": {
         "rotary": [
             {
-                "pin_a": "GP26",
-                "pin_b": "GP27",
+                "pin_a": "GP27",
+                "pin_b": "GP26",
                 "resolution": 4
             }
         ]
