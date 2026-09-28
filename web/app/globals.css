@@ -40,3 +40,40 @@ body {
   background: var(--color-ink);
   color: var(--color-paper);
 }
+
+/* configurator sliders: hairline track, square ink thumb; --track paints hue/saturation ramps */
+.range-ink {
+  appearance: none;
+  height: 1.5rem;
+  background: transparent;
+  cursor: pointer;
+}
+.range-ink::-webkit-slider-runnable-track {
+  height: 6px;
+  background: var(--track, color-mix(in srgb, var(--color-ink) 18%, transparent));
+  border: 1px solid color-mix(in srgb, var(--color-ink) 30%, transparent);
+}
+.range-ink::-moz-range-track {
+  height: 6px;
+  background: var(--track, color-mix(in srgb, var(--color-ink) 18%, transparent));
+  border: 1px solid color-mix(in srgb, var(--color-ink) 30%, transparent);
+}
+.range-ink::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 20px;
+  margin-top: -8px;
+  background: var(--color-paper);
+  border: 2px solid var(--color-ink);
+}
+.range-ink::-moz-range-thumb {
+  width: 12px;
+  height: 20px;
+  border-radius: 0;
+  background: var(--color-paper);
+  border: 2px solid var(--color-ink);
+}
+.range-ink:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}

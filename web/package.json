@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "preview": "npx serve out"
+    "preview": "npx serve out",
+    "test": "node --experimental-strip-types --no-warnings=ExperimentalWarning scripts/test-configurator.mts",
+    "gen:qmk": "python3 scripts/gen-qmk-data.py"
   },
   "dependencies": {
     "next": "^15.1.6",

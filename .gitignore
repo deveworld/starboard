@@ -9,3 +9,6 @@ fp-info-cache
 
 # Temp / build artifacts
 *.tmp
+
+# Browser automation screenshots
+.playwright-mcp/

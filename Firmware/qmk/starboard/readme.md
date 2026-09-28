@@ -14,4 +14,6 @@ Build:
 qmk compile -kb starboard -km default
 ```
 
-Flash the generated UF2 by plugging in the XIAO RP2040 while holding BOOT, then copying the UF2 onto the bootloader drive.
+Flash the generated UF2 by entering the bootloader (hold FN and press the top-left key, or hold the top-left key while plugging in USB), then copying the UF2 onto the `RPI-RP2` drive.
+
+The default keymap enables VIA; configure it at <https://deveworld.github.io/starboard/configure/>.

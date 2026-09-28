@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Viewer from "./Viewer";
 import Gallery from "./Gallery";
 
@@ -7,15 +8,15 @@ const RAW = "https://github.com/deveworld/starboard/raw/main";
 const hardware: { title: string; desc: string }[] = [
   { title: "Switches", desc: "Six MX-style switches on a 3×2 matrix with 1N4148 through-hole diodes." },
   { title: "Encoder", desc: "EC11 rotary with push-switch — volume by default, lighting on the FN layer." },
-  { title: "Display", desc: "0.91-inch 128×32 SSD1306 OLED over I²C, showing layer and device name." },
+  { title: "Display", desc: "0.91-inch 128×32 SSD1306 OLED over I²C, showing the active layer or your own text." },
   { title: "Lighting", desc: "Six SK6812 MINI-E addressable LEDs, edge-mounted for diffused underglow." },
   { title: "Controller", desc: "Seeed XIAO RP2040, dual-core with native USB-C and no extra support parts." },
-  { title: "Firmware", desc: "QMK with layers and encoder maps; a prebuilt UF2 is ready to flash." },
+  { title: "Firmware", desc: "QMK with VIA: remap keys, lighting, the display and macros from the browser." },
 ];
 
 const specs: { label: string; value: string }[] = [
   { label: "Board", value: "63.0 × 63.0 mm" },
-  { label: "Layers", value: "2" },
+  { label: "Layers", value: "4, remappable" },
   { label: "Enclosure", value: "83.8 × 83.8 × 18.5 mm" },
   { label: "Controller", value: "Seeed XIAO RP2040" },
   { label: "Inputs", value: "6 keys + encoder" },
@@ -70,6 +71,7 @@ export default function Home() {
           <a href="#specs" className="transition-colors hover:text-ink">Specs</a>
           <a href="#keymap" className="transition-colors hover:text-ink">Keymap</a>
           <a href="#bom" className="transition-colors hover:text-ink">BOM</a>
+          <Link href="/configure/" className="transition-colors hover:text-ink">Configure</Link>
           <a href={REPO} className="transition-colors hover:text-accent">GitHub ↗</a>
         </nav>
       </header>
@@ -89,6 +91,9 @@ export default function Home() {
           >
             Download firmware
           </a>
+          <Link href="/configure/" className="text-sm font-medium underline decoration-1 underline-offset-4 hover:text-accent">
+            Configure in the browser
+          </Link>
           <a href={REPO} className="text-sm font-medium underline decoration-1 underline-offset-4 hover:text-accent">
             Source on GitHub →
           </a>
@@ -172,7 +177,7 @@ export default function Home() {
               ["Encoder turn", "Volume down / up"],
               ["Encoder press", "Play / pause"],
               ["FN layer", "RGB toggle, mode, hue / sat / val, and QK_BOOT"],
-              ["OLED", "Shows the active layer and device name"],
+              ["OLED", "Shows the active layer, or your own text set in the configurator"],
             ].map(([t, d]) => (
               <div key={t} className="grid grid-cols-[8rem_1fr] gap-4 py-3">
                 <dt className="label pt-0.5 text-faint">{t}</dt>

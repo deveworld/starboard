@@ -46,6 +46,8 @@ The current case model is `CAD/assembled-model.STEP`, which includes the case an
 - Prebuilt UF2: `production/firmware.uf2`
 - Build command: `qmk compile -kb starboard -km default`
 - Features: 6-key matrix, encoder rotation, encoder press, SSD1306 OLED, SK6812 RGB lighting
+- Configurator: **<https://deveworld.github.io/starboard/configure/>** remaps keys and the encoder, sets lighting, writes custom OLED text and records macros over WebHID (Chrome/Edge). The firmware speaks the VIA protocol, with OLED settings on VIA's custom channel.
+- Flashing an assembled board: hold FN (bottom-right key) and press the top-left key to enter the bootloader, then copy the UF2 onto the `RPI-RP2` drive.
 - Wireless note: the current XIAO RP2040 hardware has no BLE radio; ZMK wireless should be reserved for a future BLE-controller revision.
 
 ## Submission Files
